@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Parent Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div>
+      <strong>School Portal</strong>
+      <span class="badge" id="metaLine"></span>
+    </div>
+    <div class="row">
+      <span class="badge" id="role"></span>
+      <span class="badge" id="who"></span>
+      <button class="secondary" onclick="schoolPortal.logout()">Logout</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <div class="row" style="justify-content:space-between; align-items:flex-start;">
+        <div>
+          <h2>Child Overview</h2>
+          <p><strong>Child:</strong> <span id="childName"></span></p>
+          <p><small class="muted">See term grades, predicted results, and teacher comments.</small></p>
+        </div>
+
+        <!-- Email teacher -->
+        <div style="min-width:220px;">
+          <a id="emailTeacherBtn" class="badge" style="display:inline-block; padding:10px 12px; text-decoration:none;">
+            Email Teacher
+          </a>
+          <div><small class="muted">Opens your email app with a pre-filled message.</small></div>
+        </div>
+      </div>
+
+      <div class="kpi">
+        <div class="pill"><strong>Attendance</strong><span id="attendance">-</span></div>
+        <div class="pill"><strong>Behaviour</strong><span id="behaviour">-</span></div>
+        <div class="pill"><strong>Homework</strong><span id="homework">-</span></div>
+      </div>
+
+      <div id="pageError" class="error"></div>
+
+      <hr/>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Term 1 Grade (Final)</th>
+            <th>Term 2 Assessments Done</th>
+            <th>Predicted End of Term 2</th>
+            <th>Predicted End of Year</th>
+          </tr>
+        </thead>
+        <tbody id="summaryBody"></tbody>
+      </table>
+    </div>
+
+    <div id="details"></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    schoolPortal.renderParentPage();
+  </script>
+</body>
+</html>

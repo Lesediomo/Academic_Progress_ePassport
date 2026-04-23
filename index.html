@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>School Portal - Login</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div><strong>School Portal</strong> <span class="badge">Grade 10</span></div>
+    <div class="badge">HTML + LocalStorage</div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Login</h2>
+      <p><small class="muted">This demo tracks Term 1 final grades + Term 2 assessments + predicted grades.</small></p>
+
+      <form id="loginForm">
+        <label>Username</label>
+        <input name="username" autocomplete="username" required />
+
+        <label>Password</label>
+        <input type="password" name="password" autocomplete="current-password" required />
+
+        <div class="row" style="margin-top:12px;">
+          <button type="submit">Login</button>
+        </div>
+        <div id="loginError" class="error"></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Demo Login Details</h3>
+
+      <div class="grid">
+        <div>
+          <strong>Teacher</strong><br/>
+          <small class="muted">teacher1 / Teach#4831</small>
+        </div>
+        <div>
+          <strong>Students</strong><br/>
+          <small class="muted">
+            amara_s1 / Stu#1049<br/>
+            jayden_s2 / Stu#7720<br/>
+            sophia_s3 / Stu#5583
+          </small>
+        </div>
+        <div>
+          <strong>Parents</strong><br/>
+          <small class="muted">
+            nadia_p1 / Par#9102 (Amara)<br/>
+            chinedu_p2 / Par#3301 (Jayden)<br/>
+            imran_p3 / Par#7744 (Sophia)
+          </small>
+        </div>
+      </div>
+
+      <hr/>
+      <small class="muted">
+        Tip: Login as teacher → update Term 2 scores → Save → then login as the student/parent to see updated predicted grades.
+      </small>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    schoolPortal.handleLoginForm("loginForm", "loginError");
+  </script>
+</body>
+</html>

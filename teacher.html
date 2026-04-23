@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Teacher Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div>
+      <strong>School Portal</strong>
+      <span class="badge" id="metaLine"></span>
+    </div>
+
+    <div class="row">
+      <span class="badge" id="role"></span>
+      <span class="badge" id="who"></span>
+      <button class="secondary" onclick="schoolPortal.logout()">Logout</button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Teacher Dashboard</h2>
+
+      <p>
+        <small class="muted">
+          Edit Term 1 grade and Term 2 assessment scores. Predictions update automatically.
+        </small>
+      </p>
+
+      <div class="row">
+
+        <div style="flex:1; min-width:240px;">
+          <label>Student</label>
+          <select id="studentSelect"></select>
+        </div>
+
+        <div style="flex:1; min-width:240px;">
+          <label>Subject</label>
+          <select id="subjectSelect"></select>
+        </div>
+
+        <div style="align-self:flex-end;">
+          <span class="badge" id="editingBadge">No student selected</span>
+        </div>
+
+      </div>
+
+      <form id="teacherForm" style="margin-top:12px;">
+
+        <div class="grid">
+          <div>
+            <label>Term 1 Final Grade</label>
+            <select id="term1GradeSelect"></select>
+          </div>
+        </div>
+
+        <hr/>
+
+        <strong>Term 2 Assessments</strong>
+        <div class="grid" id="assessmentInputs" style="margin-top:6px;"></div>
+
+        <div class="progress-wrap" style="margin-top:12px;">
+          <small class="muted" id="completionLabel">Term 2 completion: -</small>
+          <div class="progress-bar">
+            <div id="completionBar"></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px; background:#fafbff;">
+          <strong>Prediction Preview</strong>
+
+          <p id="previewTerm2"></p>
+          <p id="previewTerm3"></p>
+          <p id="previewYear"></p>
+
+        </div>
+
+        <label>Comment for student</label>
+        <textarea id="studentCommentInput"></textarea>
+
+        <label>Comment for parent only</label>
+        <textarea id="parentCommentInput"></textarea>
+
+        <div class="row" style="margin-top:12px;">
+          <button type="submit">Save</button>
+          <button type="button" id="resetBtn" class="secondary">Reset Demo Data</button>
+        </div>
+
+        <div id="status"></div>
+
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Quick Test</h3>
+      <ol>
+        <li>Login as <span class="badge">teacher1</span></li>
+        <li>Select student + subject</li>
+        <li>Enter scores and click Save</li>
+        <li>Check student/parent dashboards</li>
+      </ol>
+    </div>
+
+    <p id="pageError" style="color:red;"></p>
+
+  </div>
+
+  <!-- JS (ONLY ONCE) -->
+  <script src="app.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.schoolPortal && window.schoolPortal.renderTeacherPage) {
+        window.schoolPortal.renderTeacherPage();
+      } else {
+        document.getElementById("pageError").textContent =
+          "JavaScript failed to load: schoolPortal.renderTeacherPage not found.";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div>
+      <strong>School Portal</strong>
+      <span class="badge" id="metaLine"></span>
+    </div>
+    <div class="row">
+      <span class="badge" id="role"></span>
+      <span class="badge" id="who"></span>
+      <button class="secondary" onclick="schoolPortal.logout()">Logout</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Overview</h2>
+      <p><small class="muted">This page shows your Term 1 final grade, Term 2 progress, and predicted grades.</small></p>
+
+      <div class="kpi">
+        <div class="pill"><strong>Attendance</strong><span id="attendance">-</span></div>
+        <div class="pill"><strong>Behaviour</strong><span id="behaviour">-</span></div>
+        <div class="pill"><strong>Homework</strong><span id="homework">-</span></div>
+      </div>
+
+      <div id="pageError" class="error"></div>
+
+      <hr/>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Term 1 Grade (Final)</th>
+            <th>Term 2 Assessments Done</th>
+            <th>Predicted End of Term 2</th>
+            <th>Predicted End of Year</th>
+          </tr>
+        </thead>
+        <tbody id="summaryBody"></tbody>
+      </table>
+    </div>
+
+    <div id="details"></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    schoolPortal.renderStudentPage();
+  </script>
+</body>
+</html>

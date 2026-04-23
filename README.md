@@ -1,4 +1,4 @@
-# 🎓 Academic Portal ePassport
+# Academic Portal ePassport
 
 Academic Portal ePassport is a web-based school management system that simulates academic tracking for teachers, students, and parents.
 
@@ -6,18 +6,18 @@ It allows teachers to input and update grades, while students and parents can vi
 
 ---
 
-## 🚀 Features
+## Features
 
-- 👨‍🏫 Teacher grade input & comments  
-- 🎓 Student performance dashboard  
-- 👨‍👩‍👧 Parent academic overview  
-- 📊 Weighted assessment system  
-- 🔮 Automatic grade predictions (Term 2, Term 3, End of Year)  
-- 💾 LocalStorage-based data persistence (no backend required)
+- Teacher grade input & comments  
+- Student performance dashboard  
+- Parent academic overview  
+- Weighted assessment system  
+- Automatic grade predictions (Term 2, Term 3, End of Year)
+- LocalStorage-based data persistence (no backend required)
 
 ---
 
-## 🧱 Tech Stack
+## Tech Stack
 
 - HTML  
 - CSS  
@@ -26,7 +26,7 @@ It allows teachers to input and update grades, while students and parents can vi
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 - index.html
 - student.html
 - parent.html
@@ -36,7 +36,7 @@ It allows teachers to input and update grades, while students and parents can vi
 
 ---
 
-## 🔐 Demo Logins
+## Demo Logins
 
 **Teacher**
 - username: teacher1
@@ -54,12 +54,12 @@ It allows teachers to input and update grades, while students and parents can vi
 
 ---
 
-## 💡 Purpose
+## Purpose
 
 This project demonstrates role-based dashboards, real-time data updates, and grade prediction logic in a simple educational system prototype.
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Built as a learning project for frontend development and data handling using JavaScript.

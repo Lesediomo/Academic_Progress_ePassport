@@ -1,49 +1,208 @@
-* { box-sizing: border-box; font-family: Arial, sans-serif; }
-body { margin: 0; background: #f6f7fb; color: #111; }
-header { background: #111; color: #fff; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
-.container { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
-.card { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 8px 24px rgba(0,0,0,.06); margin-bottom: 16px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
-label { display:block; font-weight: 600; margin: 10px 0 6px; }
-input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 10px; }
-textarea { min-height: 90px; resize: vertical; }
-button { padding: 10px 14px; border: 0; border-radius: 10px; background: #111; color: #fff; cursor: pointer; }
-button.secondary { background: #e9e9ee; color: #111; }
-.row { display:flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-.badge { display:inline-block; padding: 6px 10px; border-radius: 999px; background:#e9e9ee; font-size: 12px; }
-table { width:100%; border-collapse: collapse; margin-top: 10px; }
-th, td { text-align:left; padding: 10px; border-bottom: 1px solid #eee; vertical-align: top; }
-small.muted { color:#666; }
-.error { color: #b00020; font-weight: 600; margin-top: 10px; }
-.success { color: #0b7a2c; font-weight: 600; margin-top: 10px; }
-hr { border: 0; border-top: 1px solid #eee; margin: 14px 0; }
+/* --------- GLOBAL --------- */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-.progress-wrap { display:flex; flex-direction: column; gap: 6px; }
-.progress-bar {
-  height: 10px; background: #eee; border-radius: 999px; overflow: hidden;
+body {
+  margin: 0;
+  background: #f4f6fb;
+  color: #111;
 }
-.progress-bar > div {
-  height: 100%;
-  width: 0%;
-  background: #111;
+
+/* --------- HEADER --------- */
+header {
+  background: #111827;
+  color: #fff;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* --------- LAYOUT --------- */
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* --------- FORM --------- */
+label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 6px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dcdfe6;
+  border-radius: 10px;
+  transition: border 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* --------- BUTTONS --------- */
+button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #1e4ed8;
+}
+
+button.secondary {
+  background: #e5e7eb;
+  color: #111;
+}
+
+button.secondary:hover {
+  background: #d1d5db;
+}
+
+/* --------- BADGES (FIXED VISIBILITY) --------- */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
   border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
 }
-.kpi { display:flex; gap: 10px; flex-wrap: wrap; }
-.kpi .pill { background:#f0f1f6; padding: 10px 12px; border-radius: 12px; }
-.kpi .pill strong { display:block; font-size: 14px; }
-.kpi .pill span { color:#444; font-size: 13px; }
+
+/* Role-based colours */
+.badge.teacher { background: #2563eb; }  /* blue */
+.badge.student { background: #16a34a; }  /* green */
+.badge.parent  { background: #9333ea; }  /* purple */
+
+/* Info badge (name, grade, etc.) */
+.badge.info { background: #111827; }
+
+/* --------- TABLE --------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+th {
+  background: #f9fafb;
+}
+
+/* --------- TEXT --------- */
+small.muted {
+  color: #6b7280;
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.success {
+  color: #16a34a;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+  margin: 14px 0;
+}
+
+/* --------- KPI --------- */
+.kpi {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.kpi .pill {
+  background: #eef2ff;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.kpi .pill strong {
+  display: block;
+  font-size: 14px;
+}
+
+.kpi .pill span {
+  color: #374151;
+  font-size: 13px;
+}
+
+/* --------- PROGRESS BAR --------- */
+.progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
 .progress-bar {
   width: 100%;
-  height: 6px;
-  background: #eee;
-  border-radius: 5px;
-  margin-top: 5px;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
   overflow: hidden;
 }
 
 .progress-bar div {
   height: 100%;
-  background: linear-gradient(to right, #4caf50, #2196f3);
+  background: linear-gradient(to right, #22c55e, #3b82f6);
   transition: width 0.3s ease;
 }

@@ -272,7 +272,7 @@ function renderStudentPage() {
   document.getElementById("role").textContent = "Student";
 
   document.getElementById("metaLine").textContent =
-    `Grade ${data.meta.gradeLevel} • Term ${data.meta.currentTerm} of ${data.meta.termsPerYear}`;
+    `Year ${data.meta.gradeLevel} • Term ${data.meta.currentTerm} of ${data.meta.termsPerYear}`;
 
   // Top “more details” summary
   document.getElementById("attendance").textContent = stats ? `${stats.attendancePct}%` : "-";
@@ -394,7 +394,7 @@ function renderParentPage() {
   const subjects = data.meta?.subjects ?? SUBJECTS_DEFAULT;
 
   document.getElementById("metaLine").textContent =
-    `Grade ${data.meta.gradeLevel} • Term ${data.meta.currentTerm} of ${data.meta.termsPerYear}`;
+    `Year ${data.meta.gradeLevel} • Term ${data.meta.currentTerm} of ${data.meta.termsPerYear}`;
 
   const user = data.users.find(u => u.username === session.username);
   const studentId = user?.studentId;
@@ -513,7 +513,7 @@ function renderTeacherPage() {
   document.getElementById("role").textContent = "Teacher";
   const metaLine = document.getElementById("metaLine");
   if (metaLine) {
-    metaLine.textContent = `Grade ${data.meta.gradeLevel} • Term ${data.meta.currentTerm} of ${data.meta.termsPerYear}`;
+    metaLine.textContent = `Year ${data.meta.gradeLevel} • Term ${data.meta.currentTerm} of ${data.meta.termsPerYear}`;
   }
 
   const studentSelect = document.getElementById("studentSelect");
